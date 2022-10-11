@@ -1,6 +1,6 @@
 import hljs from 'highlight.js'
 
-export default function (app) {
+function installVue3Highlightjs(app, options = {}) {
   app.directive('highlightjs', (el, binding) => {
     const codeNodes = el.querySelectorAll('code')
 
@@ -11,7 +11,9 @@ export default function (app) {
         codeNode.textContent = binding.value
       }
 
-      hljs.highlightBlock(codeNode)
+      hljs.highlightElement(codeNode)
     }
   })
 }
+
+export { installVue3Highlightjs }

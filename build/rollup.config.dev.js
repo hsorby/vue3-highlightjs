@@ -1,5 +1,7 @@
 import path from 'path'
 import babel from '@rollup/plugin-babel'
+import { nodeResolve } from '@rollup/plugin-node-resolve'
+import commonjs from '@rollup/plugin-commonjs'
 
 const inputPath = path.resolve(__dirname, '../src/index.js')
 const umdOutputPath = path.resolve(__dirname, '../dist/vue3-highlight.js')
@@ -20,5 +22,5 @@ export default {
     { file: cjsOutputPath, format: 'cjs' },
     { file: esOutputPath, format: 'es' },
   ],
-  plugins: [babel()],
+  plugins: [babel({ babelHelpers: 'bundled' }), commonjs(), nodeResolve()],
 }
