@@ -6,8 +6,7 @@
   "module": "dist/vue3-highlightjs.mjs",
   "files": [
     "dist/*.mjs",
-    "dist/*.mjs.map",
-    "styles/*.css"
+    "dist/*.mjs.map"
   ],
   "repository": {
     "type": "git",
